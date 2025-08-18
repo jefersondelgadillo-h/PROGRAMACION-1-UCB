@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversor de Bases</title>
+  <style>
+    :root {
+      --color-primario: #FFCF15;
+      --color-secundario: #00477A;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f6f6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--color-secundario);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    footer {
+      background: var(--color-secundario);
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      margin-top: auto;
+    }
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      gap: 10px;
+    }
+    .boton {
+      background: var(--color-primario);
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .boton:hover {
+      background: #e0b313;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Conversor de Base Numérica</h1>
+</header>
+
+<div class="contenedor">
+  <input type="text" id="numero" placeholder="Número" />
+  <input type="text" id="base" placeholder="Base destino" />
+  <button class="boton" onclick="convertirBase()">Convertir</button>
+  <input type="text" id="resultado" placeholder="Resultado" readonly />
+</div>
+
+<footer>
+  <p>© 2025 Mi Aplicación Web</p>
+</footer>
+
+<script>
+  // Función de ejemplo que seguramente estará en tu archivo funciones.js
+  function aBase(numero, base) {
+    // Conversión simple para ejemplificar
+    return Number(numero).toString(Number(base));
+  }
+
+  // Función que se ejecuta al presionar el botón
+  function convertirBase() {
+    const numero = document.getElementById('numero').value;
+    const base = document.getElementById('base').value;
+
+    // Llamamos la lógica que luego se reemplazará por funciones de funciones.js
+    const resultado = aBase(numero, base);
+
+    document.getElementById('resultado').value = resultado;
+  }
+</script>
+
+</body>
+</html>
