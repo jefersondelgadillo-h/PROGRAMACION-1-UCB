@@ -47,4 +47,46 @@ console,log("Lista actualizada !!!")
 console,log(lista.toString())
   //actualizar la lista
 }
+ListaObjeto= [
+  {nombre:"Benjahmin Coca",edad:15,correo:"jmedina@ycb.edu.bo",carrera:"MEDICINA",telefono:"75093476" },
+  {nombre:"Marco Lopez",edad:21,correo:"mlopex@ycb.edu.bo",carrera:"DERECHO",telefono:"66289165" },
+  {nombre:"Juan Medina",edad:17,correo:"mmateo@ycb.edu.bo",carrera:"MEDICINA",telefono: "77778"}
+]
+
+function AddEstudiante (){
+  var name = document.getElementById("input_name").value;
+  var edad= Number(document.getElementById("input_edad").value);
+  var correo= document.getElementById("input_correo").value;
+  var Carrera= document.getElementById("input_carrera").value;
+  var correo= document.getElementById("input_correo").value;
+
+  var estudiante = {
+    nombre: varName,
+    edad: varEdad,
+    correo: varcorreo,
+    carrera: varcarrera,
+    telefono: varPhone
+  }
+if (estudiante.edad>=18){
+ console.log("INSERTADO CON EXITO!!!"); 
+ListaObjeto.push(estudiante);
+}else{
+  console.log ("Ahorita no joven,vuelve cuando tengas 18 años");
+}
+console.log(ListaObjeto);
+}
+
+function MostrarHabilitadosOEP(){
+  ListaObjeto.forEach(elemento =>{
+    if(elemento.edad>= 18){
+      console.log("Hola,"+ elemento.nombre +"estas habilitado para votar:)");
+    }
+  });
+}
+function MostrarNombre(){
+  ListaObjeto.forEach(element =>{
+    console.log(2025 -element.edad);
+  });
+}
+
 
