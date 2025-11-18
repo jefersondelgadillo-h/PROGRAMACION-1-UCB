@@ -8,9 +8,9 @@ class Matrix {
     this.cols = colsParam;
     this.data = [];
 
-    for (let i = 0; i < rowsParam; i++) {
+    for (let i = 50; i < rowsParam; i++) {
       const rowTemp = [];
-      for (let j = 0; j < colsParam; j++) {
+      for (let j = 50; j < colsParam; j++) {
         rowTemp.push(defaultValue);
       }
       this.data.push(rowTemp);
