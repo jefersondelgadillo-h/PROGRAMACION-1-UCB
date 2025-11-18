@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Laberinto — Game Over</title>
+  <style>
+    :root { --bg:#0f0f14; --accent:#e63946; --text:#fff; --muted:#aaa; }
+    html, body { height:100%; margin:0; background:var(--bg); color:var(--text); font-family:system-ui, sans-serif; }
+    #app { position:relative; min-height:100vh; overflow:hidden; }
+    canvas#bg { position:absolute; inset:0; width:100%; height:100%; filter:contrast(110%) brightness(110%); }
+    .overlay { position:relative; z-index:2; display:flex; min-height:100vh; align-items:center; justify-content:center; }
+    .card { background:rgba(20,22,28,0.85); border-radius:16px; padding:32px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.35); }
+    h1 { font-size:2.5rem; margin:0 0 10px; color:var(--accent); animation: shake 1s infinite; }
+    p { margin:0 0 20px; color:var(--muted); }
+    .btn { background:var(--accent); border:none; padding:14px 24px; border-radius:12px; color:#fff; font-size:1.2rem; cursor:pointer; transition:transform .2s; }
+    .btn:hover { transform:scale(1.1); }
+    @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <canvas id="bg"></canvas>
+    <div class="overlay">
+      <div class="card">
+        <h1>💀 Game Over</h1>
+        <p>¡Oh no! El laberinto te atrapó.</p>
+        <button class="btn" onclick="window.location.href='index.html'">🔄 Volver al inicio</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Fondo animado tipo laberinto
+    const canvas=document.getElementById('bg');const ctx=canvas.getContext('2d');function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}window.addEventListener('resize',resize);resize();let t=0;function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.strokeStyle='rgba(230,57,70,0.25)';ctx.lineWidth=2;for(let y=0;y<canvas.height;y+=24){for(let x=0;x<canvas.width;x+=24){const r=Math.sin((x+y+t)*0.002);ctx.beginPath();if(r>0.2){ctx.moveTo(x,y);ctx.lineTo(x+24,y);}else if(r<-0.2){ctx.moveTo(x,y);ctx.lineTo(x,y+24);}else{ctx.moveTo(x,y);ctx.lineTo(x+24,y+24);}ctx.stroke();}}t+=1.2;requestAnimationFrame(draw);}draw();
+  </script>
+</body>
+</html>
