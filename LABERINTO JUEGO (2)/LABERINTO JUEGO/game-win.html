@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Victoria! - Laberinto 2D</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/game-win.css" />
+</head>
+<body>
+  <!-- Canvas para confetti -->
+  <canvas id="confetti-canvas"></canvas>
+  
+  <div class="victory-container">
+    <div class="trophy-container">
+      <svg class="trophy" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/>
+      </svg>
+      <div class="level-badge" id="level-badge">1</div>
+    </div>
+    
+    <div class="victory-card">
+      <h1 class="victory-title" id="victory-title">¡VICTORIA!</h1>
+      <p class="victory-subtitle" id="victory-subtitle">Nivel completado con éxito</p>
+      
+      <div class="victory-message" id="victory-message">
+        Has demostrado tu ingenio y superado el desafío del laberinto.
+        ¡Excelente trabajo!
+      </div>
+      
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-value" id="current-level">1</span>
+          <span class="stat-label">Nivel Actual</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="next-level">2</span>
+          <span class="stat-label">Próximo Nivel</span>
+        </div>
+      </div>
+      
+      <div class="completed-levels">
+        <div class="level-dot completed" data-level="1"></div>
+        <div class="level-dot" data-level="2"></div>
+        <div class="level-dot" data-level="3"></div>
+      </div>
+    </div>
+    
+    <div class="buttons-container">
+      <button class="victory-btn victory-btn-primary" id="next-level-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+        </svg>
+        Siguiente Nivel
+      </button>
+      <button class="victory-btn victory-btn-secondary" id="replay-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,5V1L7,6L12,11V7A6,6 0 0,1 18,13A6,6 0 0,1 12,19A6,6 0 0,1 6,13H4A8,8 0 0,0 12,21A8,8 0 0,0 20,13A8,8 0 0,0 12,5Z"/>
+        </svg>
+        Repetir Nivel
+      </button>
+      <button class="victory-btn victory-btn-secondary" id="menu-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+        </svg>
+        Volver al Menú
+      </button>
+    </div>
+  </div>
+
+  <script src="./js/game-win.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Laberinto — Inicio</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div id="app">
+    <canvas id="bg" aria-hidden="true"></canvas>
+
+    <div class="overlay">
+      <div class="card" role="region" aria-label="Inicio del juego El Laberinto">
+        <div class="card-header">
+          <h1 class="title">El Laberinto 2D UCB</h1>
+          <p class="subtitle">¡Desafía tu Mente! Prepárate para una aventura de ingenio donde la única salida es tu astucia. El
+            Laberinto 2D es un clásico atemporal: te encuentras en una cuadrícula llena de caminos retorcidos, trampas ocultas y un
+            sinfín de callejones sin salida.
+            ¿Crees tener la habilidad para desentrañar el enigma?
+            ¡Acepta el reto y demuestra que puedes conquistar el laberinto!</p>
+        </div>
+
+        <div class="content">
+          <button class="btn btn-primary" id="btn-play">▶ Jugar Nivel 1</button>
+          <button class="btn" id="btn-level2">▶ Jugar Nivel 2</button>
+          <button class="btn" id="btn-level3">▶ Jugar Nivel 3</button>
+        </div>
+
+        <div class="content">
+          <div class="row">
+            <button class="btn" id="btn-how">❓ Instrucciones</button>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div>
+            <span class="kbd">←</span>
+            <span class="kbd">↑</span>
+            <span class="kbd">→</span>
+            <span class="kbd">↓</span>
+            para mover al jugador
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal genérico -->
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <header>
+          <strong id="modal-title">Instrucciones</strong>
+        </header>
+        <div class="body" id="modal-body">
+          <!-- Contenido dinámico -->
+        </div>
+        <footer>
+          <button class="btn" id="modal-close">Cerrar</button>
+          <button class="btn btn-primary hidden" id="modal-action">Aceptar</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

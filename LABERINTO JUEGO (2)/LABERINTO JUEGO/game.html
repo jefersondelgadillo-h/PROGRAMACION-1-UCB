@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laberinto 2D - Nivel</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- La pregunta se insertará aquí por JavaScript -->
+    
+    <!-- Contenedor del laberinto SIN scroll interno -->
+    <div class="maze-container" id="mazeContainer">
+      <div class="map-hint">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M7.07,9.27C7.07,8.5 7.71,7.86 8.5,7.86C9.29,7.86 9.93,8.5 9.93,9.27C9.93,10.04 9.29,10.68 8.5,10.68C7.71,10.68 7.07,10.04 7.07,9.27M9.93,15.73C9.93,14.96 9.29,14.32 8.5,14.32C7.71,14.32 7.07,14.96 7.07,15.73C7.07,16.5 7.71,17.14 8.5,17.14C9.29,17.14 9.93,16.5 9.93,15.73M12,18C11.5,18 11,17.5 11,17C11,16.5 11.5,16 12,16C12.5,16 13,16.5 13,17C13,17.5 12.5,18 12,18M16.93,9.27C16.93,8.5 16.29,7.86 15.5,7.86C14.71,7.86 14.07,8.5 14.07,9.27C14.07,10.04 14.71,10.68 15.5,10.68C16.29,10.68 16.93,10.04 16.93,9.27M14.07,15.73C14.07,14.96 14.71,14.32 15.5,14.32C16.29,14.32 16.93,14.96 16.93,15.73C16.93,16.5 16.29,17.14 15.5,17.14C14.71,17.14 14.07,16.5 14.07,15.73M12,8C10.34,8 9,9.34 9,11C9,12.66 10.34,14 12,14C13.66,14 15,12.66 15,11C15,9.34 13.66,8 12,8Z"/>
+        </svg>
+        Vista dinámica
+      </div>
+      <div class="canvas-wrapper" id="canvasWrapper">
+        <canvas id="gameCanvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Controles e instrucciones -->
+    <div class="controls">
+      <p><strong>Controles:</strong></p>
+      <p>Movimiento: <kbd class="kbd">↑</kbd> <kbd class="kbd">↓</kbd> <kbd class="kbd">←</kbd> <kbd class="kbd">→</kbd> 
+      o <kbd class="kbd">W</kbd> <kbd class="kbd">A</kbd> <kbd class="kbd">S</kbd> <kbd class="kbd">D</kbd></p>
+      <p>Pistas: <strong>Solo pasa el mouse</strong> sobre una imagen para ver información detallada</p>
+      <p>Objetivo: Llega a la respuesta correcta evitando las incorrectas</p>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='index.html'">
+      ← Volver al Menú
+    </button>
+  </div>
+
+  <!-- Botón de scroll para móviles -->
+  <div class="scroll-indicator" id="scrollToTop">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/>
+    </svg>
+  </div>
+
+  <!-- Carga los scripts en orden -->
+  <script src="./js/main.js"></script>
+  <script src="./js/matrix.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/game-scroll.js"></script>
+</body>
+</html>
